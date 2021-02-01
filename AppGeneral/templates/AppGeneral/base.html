@@ -1,0 +1,120 @@
+<html>
+
+<head>
+
+    {% load static %}
+
+    <!-- Bootstrap -->
+    <link href="{% static 'AppGeneral/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+     
+
+    <!-- Styles -->
+    <link href="{% static 'AppGeneral/css/gestion.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      
+        <span class="site-heading-lower">The Lotto's Statistics last 30 years</span>
+      </h1>
+
+
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="background: #8A2BE2;" >
+      <div class="collapse navbar-collapse" id="navbarResponsive" >
+        <ul class="navbar-nav mx-auto" >
+          <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item {% if request.path == 'acercaDe/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'acercaDe' %}">About</a>
+          </li>
+          <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="https://www.txlottery.org/export/sites/lottery/Games/Lotto_Texas/Winning_Numbers/lottotexas.csv">Download</a>
+          </li>
+          <li class="nav-item {% if request.path == '/llamaPdfHoy' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'llamaPdfHoy' %}">Today</a>
+          </li>
+          <li class="nav-item {% if request.path == '/numerosfrecuencia' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'numerosfrecuencia' %}">Numbers/Frecuency</a>
+          </li>
+           
+          <li class="nav-item {% if request.path == '/recibeDia' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'recibeDia' %}">Day</a>
+          </li>
+          <li class="nav-item {% if request.path == '/recibeMes' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'recibeMes' %}">Month</a>
+          </li>
+          <li class="nav-item {% if request.path == '/recibeDiaMes' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'recibeDiaMes' %}">Day/Month</a>
+          </li> 
+          <li class="nav-item {% if request.path == '/masReportes' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'masReportes' %}">More...</a>
+          </li>
+          <li class="nav-item {% if request.path == '/Blog' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
+          </li>  
+          <li class="nav-item {% if request.path == '/Contacto' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contact</a>
+          </li>
+          <li class="nav-item {% if request.path == '/Help' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Help' %}">Help</a>
+          </li>
+         
+        </ul>
+      </div>
+  </nav>
+
+
+  <!-- Contenido cambiante -->
+  
+  {% block content %}
+  
+  
+  {% endblock%}
+
+
+    <!-- Footer -->
+    <footer class="footer text-faded text-center py-5"">
+      <div class="container">
+        <p class="m-0">
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	    </p>
+        <p class="m-0 mbt">
+        	<a href="sample.html" class="link">Derechos Reservados</a> ·
+		</p>
+        <p class="m-0 mbt1">&copy; Datos hasta octubre 2020</p>
+      </div>
+	</footer>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'AppGeneral/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'AppGeneral/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+
+</html>

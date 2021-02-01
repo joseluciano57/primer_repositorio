@@ -1,0 +1,1 @@
+web: gunicorn ProyectoLoteria.wsgi --log-file -
